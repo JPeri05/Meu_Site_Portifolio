@@ -41,7 +41,7 @@
     margin-bottom: 3rem;
     padding: 30px;
     line-height: 1.4;
-    text-align: start;
+    text-align: center;
     background-color: var(--color-box);
   }
   /* Cabeçario modo escuro */
@@ -136,7 +136,7 @@
     justify-content: start;
     padding-top: 2px;
     padding-bottom: 2px;
-    padding-left: 6px;
+    padding-left: 3px;
     transition: all .5s;
   }
   /* Caixa do botão - Modo escuro */
@@ -144,16 +144,20 @@
     background-color: var(--lighter-color);
     display: flex;
     justify-content: end;
+    padding-left: 0;
+    padding-right: 3px;
   }
   /* Botão claro */
   #switch-button {
     fill: #fff;
     color: #fff;
     background-color: #000;
+    border-color: #000;
     width: 56px;
     height: 56px;
     border-radius: 50%;
-    font-size: 30pt;
+    font-size: 35pt;
+    font-weight: 600;
     line-height: 1.0;
     text-align: center;
     padding: 5px;
@@ -163,8 +167,9 @@
   }
   /* Botão escuro */
   .dark-mode #switch-button {
-    fill: #fff;
+    fill: #000;
     color: #000;
+    border-color: #fff;
     background-color: #fff;
     padding-left: 8px;
     display: flex;
@@ -457,7 +462,7 @@
     justify-content: start;
     padding-top: 1px;
     padding-bottom: 1px;
-    padding-left: 3px;
+    padding-left: 1px;
     transition: all .5s;
   }
   /* Caixa do botão - Modo escuro */
@@ -475,6 +480,7 @@
     height: 28px;
     border-radius: 50%;
     font-size: 18pt;
+    font-weight: 600;
     line-height: 1.0;
     text-align: center;
     padding: 1px;
@@ -483,7 +489,7 @@
   }
   /* Botão escuro */
   .dark-mode #switch-button {
-    fill: #fff;
+    fill: #000;
     color: #000;
     background-color: #fff;
     padding-left: 1px;
