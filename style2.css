@@ -576,6 +576,17 @@
     text-align: center;
     font-weight: 400;
   }
+  /* Nota de direitos autorais */
+  .copyright {
+    font-size: 1.0rem;
+    text-align: center;
+    font-weight: 600;
+    color: #fff;
+  }
+  /* Variação escura do texto */
+  .dark-mode .copyright {
+    color: #000;
+  }
   /* Tabela da página Sobre-mim */
   .table-sobre {
     width: auto;
