@@ -1,704 +1,895 @@
   /* Importação da fonte 'Sora' vinda do googlefonts */
-@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800&display=swap');
 
   /* Reset do CSS */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-  /* Root de cores */
-:root {
-  --color-box: #47bf67;
-  --lighter-color: #3da859;
-  --darkcolor-box: #2d6e3e;
-  --darker-color: #245731;
-  --color-special: #76fc6a;
-  --neutral-gray: #999;
-}
-
-  /* Estilo para computador */
-@media (max-width: 1600px) {
-  /* Modo claro/padrão */
-  .light-mode {
-    width: 100%;
-    height: 100vh;
-    font-size: 16pt;
-    font-weight: 200;
-    color: #000;
-    background-color: #fff;
-    font-family: 'Sora', sans-serif;
-  }
-  /* Modo escuro/alternativo */
-  .dark-mode {
-    color: #fff;
-    background-color: #000;
-  }
-  /* Cabeçario do site */
-  .header-box {
-    width: 100%;
-    height: auto;
-    margin-bottom: 1.5rem;
-    padding: 15px;
-    line-height: 1.4;
-    text-align: center;
-    background-color: var(--color-box);
-  }
-  /* Cabeçario modo escuro */
-  .dark-mode header {
-    background-color: var(--darkcolor-box);
-  }
-  /* Titulo do cabeçario */
-  .header-title {
-    font-size: 3rem;
-    font-weight: 500;
-    text-align: left;
-    text-decoration: none;
-    color: #000;
-  }
-  /* Modo escuro do título cabeçario */
-  .dark-mode .header-title {
-    color: #fff;
-  }
-  /* Span do titulo do cabeçario */
-  .title-span {
-    font-size: 2rem;
-    color: #fff;
-  }
-  /* Modo escuro do Span cabeçario */
-  .dark-mode .title-span {
-    color: #000;
-  }
-  /* Área de navegação */
-  .navbox {
-    display: flex;
-    flex-direction: row;
-    background-color: var(--color-box);
-  }
-  /* Modo escuro da área de navegação */
-  .dark-mode .navbox {
-    background-color: var(--darkcolor-box);
-  }
-  /* Barra de navegação */
-  .navbar {
-    position: relative;
-    z-index: 999;
-    width: 100%;
-    font-size: 2rem;
-    color: #000;
-  }
-  .navbar ul {
-    list-style: none;
-    background-color: var(--color-box);
-    line-height: 1.4;
-  }
-  .navbar li {
-    display: inline-block;
-  }
-  .navbar li a {
-    color: #fff;
-    display: block;
-    padding: 15px 20px;
-    text-decoration: none;
-    font-weight: 400;
-  }
-  .navbar ul ul {
-    position: absolute;
-    display: none;
-  }
-  .navbar ul ul li {
-    display: block;
-  }
-  /* Modo escuro da barra de navegação */
-  .dark-mode .navbar {
-    color: #fff;
-  }
-  .dark-mode .navbar ul {
-    background-color: var(--darkcolor-box);
-  }
-  .dark-mode .navbar li a {
-    color: #000;
-  }
-  /* Hover da barra de navegação */
-  .navbar li:hover ul {
-    display: block;
-  }
-  .navbar ul ul li a:hover {
-    background-color: #555;
-  }
-  /* Caixa do botão - Modo claro */
-  .buttonSlider {
-    width: 60px;
-    height: 30px;
-    border-radius: 30px;
-    background-color: var(--darker-color);
-    display: flex;
-    justify-content: start;
-    padding-top: 1px;
-    padding-bottom: 1px;
-    padding-left: 2px;
-    transition: all .5s;
-  }
-  /* Caixa do botão - Modo escuro */
-  .dark-mode .buttonSlider {
-    background-color: var(--lighter-color);
-    display: flex;
-    justify-content: end;
-    padding-left: 0;
-    padding-right: 2px;
-  }
-  /* Botão claro */
-  #switch-button {
-    fill: #fff;
-    color: #fff;
-    background-color: #000;
-    border-color: #000;
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    font-size: 17.5pt;
-    font-weight: 600;
-    line-height: 0.7;
-    text-align: center;
-    padding: 4px;
-    padding-left: 3px;
-    display: flex;
-    transition: all .5s;
-  }
-  /* Botão escuro */
-  .dark-mode #switch-button {
-    fill: #000;
-    color: #000;
-    border-color: #fff;
-    background-color: #fff;
-    padding-left: 3px;
-    display: flex;
-  }
-  /* Botão modo claro com Hover */
-  #switch-button:hover {
-    background-color: #888;
-    color: #fff;
-  }
-  /* Botão modo escuro com Hover  */
-  .dark-mode #switch-button:hover {
-    color: #000;
-  }
-  /* Título principal */
-  .title {
-    font-size: 1.5rem;
-    text-align: center;
-  }
-  /* Área principal */
-  .main-section {
-    text-align: center;
-  }
-  .main-box1 {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
-  /* Artigo principal */
-  .main-article {
-    margin-top: 25px;
-    width: 80%;
-    height: auto;
-    text-align: left;
-    line-height: 1.4;
-    padding: 25px 25px 15px 25px;
-    border: #000 5px solid;
-  }
-  .main-article p {
-    font-size: 14pt;
-  }
-  /* Modo escuro do artigo */
-  .dark-mode .main-article {
-    border-color: #fff;
-  }
-  /* Spans de artigo */
-  .name-span {
-    font-size: 14pt;
-    color: var(--color-special);
-    font-weight: 450;
-  }
-  .article-span {
-    font-size: 13;
-    font-weight: 300;
-  }
-  .span-email {
-    text-decoration: underline;
-    color: darkgreen;
-    font-weight: 600;
-  }
-  /* Rodapé do site */
-  footer {
-    width: 100%;
-    height: auto;
-    margin-top: 1.5rem;
-    background-color: var(--color-box);
-    line-height: 1.4;
-    padding: 15px;
-  }
-  /* Rodapé modo escuro */
-  .dark-mode footer {
-    background-color: var(--darkcolor-box);
-  }
-  /* Título do rodapé */
-  .footer-title {
-    font-size: 1.5rem;
-    text-align: center;
-    font-weight: 400;
-  }
-    /* Nota de direitos autorais */
-  .copyright {
-    font-size: 1.0rem;
-    text-align: center;
-    font-weight: 600;
-    color: #fff;
-  }
-  /* Variação escura do texto */
-  .dark-mode .copyright {
-    color: #000;
-  }
-  /* Tabela da página Sobre-mim */
-  .table-sobre {
-    width: 50%;
-    height: auto;
-    margin: auto;
-    margin-top: 1rem;
-    padding: 15px;
-    font-size: 1.5rem;
-    background-color: #fff;
-    border: 5px solid #000;
-  }
-  .table-sobre th {
-    text-align: left;
-    padding: 5px;
-    padding-right: 0;
-    font-weight: 500;
-  }
-  .table-sobre td {
-    text-align: right;
-    padding: 5px;
-    padding-left: 0;
-    font-weight: 300;
-  }
-  /* Modo escuro da tabela Sobre */
-  .dark-mode .table-sobre {
-    background-color: #000;
-    border-color: #fff;
-    color: #fff;
-  }
-  /* Imagem de placeholder */
-  .espere {
-    margin-top: 2rem;
-    display: flex;
-    justify-content: center;
-  }
-  .espere img {
-    width: 600px;
-    height: auto;
-    display: flex;
-  }
-  /* Área de slide da página Galeria */
-  .slide-section {
-    padding: 2rem;
-    display: flex;
-    justify-content: center;
-  }
-  .slider-wrapper {
-    position: relative;
-    max-width: 48rem;
-    margin: 0 auto;
-  }
-  /* Slide de imagens da Galeria */
-  .slider {
-    width: 48rem;
-    height: 48rem;
-    display: flex;
-    aspect-ratio: 16/9;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
-    border-radius: 0.5rem;
-  }
-  /* Configuração das imagens */
-  .slider img {
-    width: 50%;
-    flex: 1 0 100%;
-    scroll-snap-align: start;
-    object-fit: cover;
-  }
-  /* Navegador do Slider de imagens */
-  .slider-nav {
-  	display: flex;
-  	border-radius: 10px;
-  	width: 100%;
-  	height: auto;
-  	margin: auto;
-  	justify-content: center;
-    background-color: var(--color-box);
-  }
-  .slider-nav a {
-    width: 1rem;
-    height: 1rem;
-    margin-left: 35px;
-    border-radius: 50%;
-    background-color: #fff;
-    opacity: 0.75;
-    transition: opacity ease 250ms;
-  }
-  /* Modo Escuro Navegador do Slider */
-  .dark-mode .slider-nav {
-  	background-color: var(--darkcolor-box);
-  }
-  /* Navegador do Slider com Hover */
-  slider-nav a:hover {
-    opacity: 100%;
-    color: #fff;
-  }
-}
-
-  /* Estilo responsivo da página para celular */
-@media (max-width: 600px) {
-  /* Modo claro/padrão */
-  .light-mode {
-    width: 100%;
-    height: 100vh;
-    font-size: 20pt;
-    font-weight: 200;
-    color: #000;
-    background-color: #fff;
-    font-family: 'Sora', sans-serif;
-  }
-  /* Modo escuro/alternativo */
-  .dark-mode {
-    color: #fff;
-    background-color: #000;
-  }
-  /* Cabeçario do site */
-  .header-box {
-    width: 100%;
-    height: auto;
-    margin-bottom: 2rem;
-    padding: 15px;
-    line-height: 1.2;
-    text-align: center;
-    background-color: var(--color-box);
-  }
-  /* Cabeçario modo escuro */
-  .dark-mode .header-box {
-    background-color: var(--darkcolor-box);
-  }
-  /* Titulo do cabeçario */
-  .header-title {
-    font-size: 4rem;
-    font-weight: 500;
-    text-align: center;
-    text-decoration: none;
-    color: #000;
-  }
-  /* Modo escuro do título cabeçario */
-  .dark-mode .header-title {
-    color: #fff;
-  }
-  /* Span do titulo do cabeçario */
-  .title-span {
-    font-size: 2rem;
-    color: #fff;
-  }
-  /* Modo escuro do Span cabeçario */
-  .dark-mode .title-span {
-    color: #000;
-  }
-  /* Área de navegação */
-  .navbox {
-    display: flex;
-    flex-direction: row;
-    background-color: var(--color-box);
-  }
-  /* Modo escuro da área de navegação */
-  .dark-mode .navbox {
-    background-color: var(--darkcolor-box);
-  }
-  /* Barra de navegação */
-  .navbar {
-    position: relative;
-    z-index: 999;
-    width: 100%;
-    font-size: 1.5rem;
-    color: #000;
-    background-color: var(--color-box);
-  }
-  .navbar ul {
-    list-style: none;
-    background-color: var(--color-box);
-    line-height: 1.4;
-  }
-  .navbar li {
-    display: inline-block;
-  }
-  .navbar li a {
-    color: #fff;
-    display: block;
-    padding: 5px 10px;
-    text-decoration: none;
-    font-weight: 400;
-  }
-  .navbar ul ul {
-    position: absolute;
-    display: none;
-  }
-  .navbar ul ul li {
-    display: block;
-  }
-  /* Modo escuro da barra de navegação */
-  .dark-mode .navbar {
-    color: #fff;
-    background-color: var(--darkcolor-box);
-  }
-  .dark-mode .navbar ul {
-    background-color: var(--darkcolor-box);
-  }
-  .dark-mode .navbar li a {
-    color: #000;
-  }
-  /* Hover da barra de navegação */
-  .navbar li:hover ul {
-    display: block;
-  }
-  .navbar ul ul li a:hover {
-    background-color: #555;
-  }
-  /* Caixa do botão - Modo claro */
-  .buttonSlider {
-    width: 60px;
-    height: 30px;
-    border-radius: 30px;
-    background-color: var(--darker-color);
-    display: flex;
-    justify-content: start;
-    padding-top: 1px;
-    padding-bottom: 1px;
-    padding-left: 1px;
-    transition: all .5s;
-  }
-  /* Caixa do botão - Modo escuro */
-  .dark-mode .buttonSlider {
-    background-color: var(--lighter-color);
-    display: flex;
-    justify-content: end;
-  }
-  /* Botão claro */
-  #switch-button {
-    fill: #fff;
-    color: #fff;
-    background-color: #000;
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    font-size: 18pt;
-    font-weight: 600;
-    line-height: 1.0;
-    text-align: center;
-    padding: 1px;
-    display: flex;
-    transition: all .5s;
-  }
-  /* Botão escuro */
-  .dark-mode #switch-button {
-    fill: #000;
-    color: #000;
-    background-color: #fff;
-    padding-left: 1px;
-    display: flex;
-  }
-  /* Botão modo claro com Hover */
-  #switch-button:hover {
-    background-color: #888;
-    color: #fff;
-  }
-  /* Botão modo escuro com Hover  */
-  .dark-mode #switch-button:hover {
-    color: #000;
-  }
-  /* Título principal */
-  .title {
-    font-size: 1.5rem;
-    font-weight: 400;
-    text-align: center;
-  }
-  /* Área principal */
-  .main-section {
-    text-align: center;
-  }
-  .main-box1 {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
-  /* Artigo principal */
-  .main-article {
-    width: 80%;
-    height: auto;
-    text-align: left;
-    line-height: 1.4;
-    padding: 20px 10px 10px 20px;
-    border: #000 5px solid;
-  }
-  .main-article p {
-    font-size: 11pt;
-  }
-  /* Modo escuro do artigo */
-  .dark-mode .main-article {
-    border-color: #fff;
-  }
-  /* Spans de artigo */
-  .name-span {
-    font-size: 13pt;
-    font-weight: 450;
-    color: var(--color-special);
-  }
-  .article-span {
-    font-size: 13pt;
-    font-weight: 300;
-  }
-  .span-email {
-    text-decoration: underline;
-    color: darkgreen;
-    font-weight: 600;
-  }
-  /* Rodapé do site */
-  footer {
-    width: 100%;
-    height: auto;
-    margin-top: 2rem;
-    background-color: var(--color-box);
-    line-height: 1.4;
-    padding: 15px;
-  }
-  /* Rodapé modo escuro */
-  .dark-mode footer {
-    background-color: var(--darkcolor-box);
-  }
-  /* Título do rodapé */
-  .footer-title {
-    font-size: 1.5rem;
-    text-align: center;
-    font-weight: 400;
-  }
-  /* Nota de direitos autorais */
-  .copyright {
-    font-size: 1.0rem;
-    text-align: center;
-    font-weight: 600;
-    color: #fff;
-  }
-  /* Variação escura do texto */
-  .dark-mode .copyright {
-    color: #000;
-  }
-  /* Tabela da página Sobre-mim */
-  .table-sobre {
-    width: auto;
-    height: auto;
-    margin: auto;
-    margin-top: 1rem;
-    padding: 1px;
-    font-size: 14pt;
-    background-color: #000;
-    border: 1px solid #000;
-    color: #000;
-  }
-  .table-sobre tr {
-    background-color: #fff;
-    padding: 1px;
-  }
-  .table-sobre th {
-    text-align: left;
-    padding: 5px;
-    padding-right: 0;
-    font-weight: 500;
-  }
-  .table-sobre td {
-    text-align: right;
-    padding: 5px;
-    padding-left: 0;
-    font-weight: 300;
-  }
-  /* Modo escuro da tabela Sobre */
-  .dark-mode .table-sobre {
-    background-color: #fff;
-    border-color: #fff;
-    color: #fff;
-  }
-  .dark-mode .table-sobre tr {
-    background-color: #000;
-  }
-  /* Imagem de placeholder */
-  .espere {
-    margin-top: 2rem;
-    display: flex;
-    justify-content: center;
-  }
-  .espere img {
-    width: 300px;
-    height: auto;
-    display: flex;
-  }
-  /* Área de slide da página Galeria */
-  .slide-section {
-    display: flex;
-    justify-content: center;
-    padding: 0;
-  }
-  .slider-wrapper {
-    position: relative;
-    max-width: 23rem;
+  * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
   }
-  /* Slide de imagens da Galeria */
-  .slider {
-    width: 23rem;
-    height: 23rem;
-    display: flex;
-    aspect-ratio: 16/9;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
-    border-radius: 0.5rem;
+
+  /* Root de cores */
+  :root {
+    --color-box: #47bf67;
+    --lighter-color: #3da859;
+    --darkcolor-box: #2d6e3e;
+    --darker-color: #245731;
+    --color-special: #76fc6a;
+    --neutral-gray: #999;
   }
-  /* Configuração das imagens */
-  .slider img {
-    flex: 1 0 100%;
-    scroll-snap-align: start;
-    object-fit: cover;
+
+  /* Estilo para computador */
+  @media (max-width: 1600px) {
+
+    /* Modo claro/padrão */
+    .light-mode {
+      width: auto;
+      height: auto;
+      font-size: 16pt;
+      font-weight: 200;
+      color: #000;
+      background-color: #fff;
+      font-family: 'Sora', sans-serif;
+    }
+
+    /* Modo escuro/alternativo */
+    .dark-mode {
+      color: #fff;
+      background-color: #000;
+    }
+
+    /* Cabeçario do site */
+    .header-box {
+      width: auto;
+      height: auto;
+      margin-bottom: 1.5rem;
+      padding: 15px;
+      line-height: 1.4;
+      text-align: center;
+      background-color: var(--color-box);
+    }
+
+    /* Cabeçario modo escuro */
+    .dark-mode header {
+      background-color: var(--darkcolor-box);
+    }
+
+    /* Titulo do cabeçario */
+    .header-title {
+      font-size: 3rem;
+      font-weight: 500;
+      text-align: left;
+      text-decoration: none;
+      color: #000;
+    }
+
+    /* Modo escuro do título cabeçario */
+    .dark-mode .header-title {
+      color: #fff;
+    }
+
+    /* Span do titulo do cabeçario */
+    .title-span {
+      font-size: 2rem;
+      color: #fff;
+    }
+
+    /* Modo escuro do Span cabeçario */
+    .dark-mode .title-span {
+      color: #000;
+    }
+
+    /* Área de navegação */
+    .navbox {
+      display: flex;
+      flex-direction: row;
+      background-color: var(--color-box);
+    }
+
+    /* Modo escuro da área de navegação */
+    .dark-mode .navbox {
+      background-color: var(--darkcolor-box);
+    }
+
+    /* Barra de navegação */
+    .navbar {
+      position: relative;
+      z-index: 999;
+      width: 100%;
+      font-size: 2rem;
+      color: #000;
+    }
+
+    .navbar ul {
+      list-style: none;
+      background-color: var(--color-box);
+      line-height: 1.4;
+    }
+
+    .navbar li {
+      display: inline-block;
+    }
+
+    .navbar li a {
+      color: #fff;
+      display: block;
+      padding: 15px 20px;
+      text-decoration: none;
+      font-weight: 400;
+    }
+
+    .navbar ul ul {
+      position: absolute;
+      display: none;
+    }
+
+    .navbar ul ul li {
+      display: block;
+    }
+
+    /* Modo escuro da barra de navegação */
+    .dark-mode .navbar {
+      color: #fff;
+    }
+
+    .dark-mode .navbar ul {
+      background-color: var(--darkcolor-box);
+    }
+
+    .dark-mode .navbar li a {
+      color: #000;
+    }
+
+    /* Hover da barra de navegação */
+    .navbar li:hover ul {
+      display: block;
+    }
+
+    .navbar ul ul li a:hover {
+      background-color: #555;
+    }
+
+    /* Caixa do botão - Modo claro */
+    .buttonSlider {
+      width: 60px;
+      height: 30px;
+      border-radius: 30px;
+      background-color: var(--darker-color);
+      display: flex;
+      justify-content: start;
+      padding-top: 1px;
+      padding-bottom: 1px;
+      padding-left: 2px;
+      transition: all .5s;
+    }
+
+    /* Caixa do botão - Modo escuro */
+    .dark-mode .buttonSlider {
+      background-color: var(--lighter-color);
+      display: flex;
+      justify-content: end;
+      padding-left: 0;
+      padding-right: 2px;
+    }
+
+    /* Botão claro */
+    #switch-button {
+      fill: #fff;
+      color: #fff;
+      background-color: #000;
+      border-color: #000;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      font-size: 17.5pt;
+      font-weight: 600;
+      line-height: 0.7;
+      text-align: center;
+      padding: 4px;
+      padding-left: 3px;
+      display: flex;
+      transition: all .5s;
+    }
+
+    /* Botão escuro */
+    .dark-mode #switch-button {
+      fill: #000;
+      color: #000;
+      border-color: #fff;
+      background-color: #fff;
+      padding-left: 3px;
+      display: flex;
+    }
+
+    /* Botão modo claro com Hover */
+    #switch-button:hover {
+      background-color: #888;
+      color: #fff;
+    }
+
+    /* Botão modo escuro com Hover  */
+    .dark-mode #switch-button:hover {
+      color: #000;
+    }
+
+    /* Título principal */
+    .title {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+
+    /* Área principal */
+    .main-section {
+      text-align: center;
+    }
+
+    .main-box1 {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    .main-box2 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* Artigo principal */
+    .main-article {
+      margin-top: 25px;
+      width: 80%;
+      height: auto;
+      text-align: left;
+      line-height: 1.4;
+      padding: 25px 25px 15px 25px;
+      border: #000 5px solid;
+    }
+
+    .main-article p {
+      font-size: 14pt;
+    }
+
+    /* Modo escuro do artigo */
+    .dark-mode .main-article {
+      border-color: #fff;
+    }
+
+    /* Spans de artigo */
+    .name-span {
+      font-size: 14pt;
+      color: var(--color-special);
+      font-weight: 450;
+    }
+
+    .article-span {
+      font-size: 13;
+      font-weight: 300;
+    }
+
+    .span-email {
+      text-decoration: underline;
+      color: darkgreen;
+      font-weight: 600;
+    }
+
+    /* Rodapé do site */
+    footer {
+      width: 100%;
+      height: auto;
+      margin-top: 1.5rem;
+      background-color: var(--color-box);
+      line-height: 1.4;
+      padding: 15px;
+    }
+
+    /* Rodapé modo escuro */
+    .dark-mode footer {
+      background-color: var(--darkcolor-box);
+    }
+
+    /* Título do rodapé */
+    .footer-title {
+      font-size: 1.5rem;
+      text-align: center;
+      font-weight: 400;
+    }
+
+    /* Nota de direitos autorais */
+    .copyright {
+      font-size: 1.0rem;
+      text-align: center;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    /* Variação escura do texto */
+    .dark-mode .copyright {
+      color: #000;
+    }
+
+    /* Tabela da página Sobre-mim */
+    .table-sobre {
+      width: 50%;
+      height: auto;
+      margin: auto;
+      margin-top: 1rem;
+      padding: 15px;
+      font-size: 1.5rem;
+      background-color: #fff;
+      border: 5px solid #000;
+    }
+
+    .table-sobre th {
+      text-align: left;
+      padding: 5px;
+      padding-right: 0;
+      font-weight: 500;
+    }
+
+    .table-sobre td {
+      text-align: right;
+      padding: 5px;
+      padding-left: 0;
+      font-weight: 300;
+    }
+
+    /* Modo escuro da tabela Sobre */
+    .dark-mode .table-sobre {
+      background-color: #000;
+      border-color: #fff;
+      color: #fff;
+    }
+
+    /* Imagem de placeholder */
+    .espere {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .espere img {
+      width: 350px;
+      height: auto;
+      display: flex;
+    }
+
+    /* Área de slide da página Galeria */
+    .slide-section {
+      padding: 2rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .slider-wrapper {
+      position: relative;
+      max-width: 48rem;
+      margin: 0 auto;
+    }
+
+    /* Slide de imagens da Galeria */
+    .slider {
+      width: 48rem;
+      height: 48rem;
+      display: flex;
+      aspect-ratio: 16/9;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
+      border-radius: 0.5rem;
+    }
+
+    /* Configuração das imagens */
+    .slider img {
+      width: 100%;
+      height: 100%;
+      flex: 1 0 100%;
+      scroll-snap-align: start;
+      object-fit: scale-down;
+    }
+
+    /* Navegador do Slider de imagens */
+    .slider-nav {
+      display: flex;
+      border-radius: 10px;
+      width: 100%;
+      height: auto;
+      margin: auto;
+      justify-content: center;
+      background-color: var(--color-box);
+    }
+
+    .slider-nav a {
+      width: 1rem;
+      height: 1rem;
+      margin-left: 35px;
+      border-radius: 50%;
+      background-color: #fff;
+      opacity: 0.75;
+      transition: opacity ease 250ms;
+    }
+
+    /* Modo Escuro Navegador do Slider */
+    .dark-mode .slider-nav {
+      background-color: var(--darkcolor-box);
+    }
+
+    /* Navegador do Slider com Hover */
+    slider-nav a:hover {
+      opacity: 100%;
+      color: #fff;
+    }
   }
-  /* Navegador do Slider de imagens */
-  .slider-nav {
-  	display: flex;
-  	border-radius: 10px;
-  	width: 100%;
-  	height: auto;
-    background-color: var(--color-box);
+
+  /* Estilo responsivo da página para celular */
+  @media (max-width: 600px) {
+
+    /* Modo claro/padrão */
+    .light-mode {
+      width: 100%;
+      height: 100%;
+      font-size: 20pt;
+      font-weight: 200;
+      color: #000;
+      background-color: #fff;
+      font-family: 'Sora', sans-serif;
+    }
+
+    /* Modo escuro/alternativo */
+    .dark-mode {
+      color: #fff;
+      background-color: #000;
+    }
+
+    /* Cabeçario do site */
+    .header-box {
+      width: 100%;
+      height: auto;
+      margin-bottom: 2rem;
+      padding: 15px;
+      line-height: 1.2;
+      text-align: center;
+      background-color: var(--color-box);
+    }
+
+    /* Cabeçario modo escuro */
+    .dark-mode .header-box {
+      background-color: var(--darkcolor-box);
+    }
+
+    /* Titulo do cabeçario */
+    .header-title {
+      font-size: 4rem;
+      font-weight: 500;
+      text-align: center;
+      text-decoration: none;
+      color: #000;
+    }
+
+    /* Modo escuro do título cabeçario */
+    .dark-mode .header-title {
+      color: #fff;
+    }
+
+    /* Span do titulo do cabeçario */
+    .title-span {
+      font-size: 2rem;
+      color: #fff;
+    }
+
+    /* Modo escuro do Span cabeçario */
+    .dark-mode .title-span {
+      color: #000;
+    }
+
+    /* Área de navegação */
+    .navbox {
+      display: flex;
+      flex-direction: row;
+      background-color: var(--color-box);
+    }
+
+    /* Modo escuro da área de navegação */
+    .dark-mode .navbox {
+      background-color: var(--darkcolor-box);
+    }
+
+    /* Barra de navegação */
+    .navbar {
+      position: relative;
+      z-index: 999;
+      width: 100%;
+      font-size: 1.5rem;
+      color: #000;
+      background-color: var(--color-box);
+    }
+
+    .navbar ul {
+      list-style: none;
+      background-color: var(--color-box);
+      line-height: 1.4;
+    }
+
+    .navbar li {
+      display: inline-block;
+    }
+
+    .navbar li a {
+      color: #fff;
+      display: block;
+      padding: 5px 10px;
+      text-decoration: none;
+      font-weight: 400;
+    }
+
+    .navbar ul ul {
+      position: absolute;
+      display: none;
+    }
+
+    .navbar ul ul li {
+      display: block;
+    }
+
+    /* Modo escuro da barra de navegação */
+    .dark-mode .navbar {
+      color: #fff;
+      background-color: var(--darkcolor-box);
+    }
+
+    .dark-mode .navbar ul {
+      background-color: var(--darkcolor-box);
+    }
+
+    .dark-mode .navbar li a {
+      color: #000;
+    }
+
+    /* Hover da barra de navegação */
+    .navbar li:hover ul {
+      display: block;
+    }
+
+    .navbar ul ul li a:hover {
+      background-color: #555;
+    }
+
+    /* Caixa do botão - Modo claro */
+    .buttonSlider {
+      width: 60px;
+      height: 30px;
+      border-radius: 30px;
+      background-color: var(--darker-color);
+      display: flex;
+      justify-content: start;
+      padding-top: 1px;
+      padding-bottom: 1px;
+      padding-left: 1px;
+      transition: all .5s;
+    }
+
+    /* Caixa do botão - Modo escuro */
+    .dark-mode .buttonSlider {
+      background-color: var(--lighter-color);
+      display: flex;
+      justify-content: end;
+    }
+
+    /* Botão claro */
+    #switch-button {
+      fill: #fff;
+      color: #fff;
+      background-color: #000;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      font-size: 18pt;
+      font-weight: 600;
+      line-height: 1.0;
+      text-align: center;
+      padding: 1px;
+      display: flex;
+      transition: all .5s;
+    }
+
+    /* Botão escuro */
+    .dark-mode #switch-button {
+      fill: #000;
+      color: #000;
+      background-color: #fff;
+      padding-left: 1px;
+      display: flex;
+    }
+
+    /* Botão modo claro com Hover */
+    #switch-button:hover {
+      background-color: #888;
+      color: #fff;
+    }
+
+    /* Botão modo escuro com Hover  */
+    .dark-mode #switch-button:hover {
+      color: #000;
+    }
+
+    /* Título principal */
+    .title {
+      font-size: 1.5rem;
+      font-weight: 400;
+      text-align: center;
+    }
+
+    /* Área principal */
+    .main-section {
+      text-align: center;
+    }
+
+    .main-box1 {
+      display: flex;
+      flex-direction: row;
+      justify-content: center
+    }
+
+    .main-box2 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* Artigo principal */
+    .main-article {
+      width: auto;
+      height: auto;
+      margin: 10%;
+      margin-top: 5%;
+      margin-bottom: 5%;
+      text-align: left;
+      line-height: 1.4;
+      padding: 10px;
+      border: #000 5px solid;
+    }
+
+    .main-article p {
+      font-size: 15pt;
+      font-weight: 200;
+    }
+
+    /* Modo escuro do artigo */
+    .dark-mode .main-article {
+      border-color: #fff;
+    }
+
+    /* Spans de artigo */
+    .name-span {
+      font-size: 13pt;
+      font-weight: 450;
+      color: var(--color-special);
+    }
+
+    .article-span {
+      font-size: 13pt;
+      font-weight: 300;
+    }
+
+    .span-email {
+      text-decoration: underline;
+      color: darkgreen;
+      font-weight: 400;
+    }
+
+    /* Rodapé do site */
+    footer {
+      width: 100%;
+      height: auto;
+      margin-top: 2rem;
+      background-color: var(--color-box);
+      line-height: 1.4;
+      padding: 15px;
+    }
+
+    /* Rodapé modo escuro */
+    .dark-mode footer {
+      background-color: var(--darkcolor-box);
+    }
+
+    /* Título do rodapé */
+    .footer-title {
+      font-size: 1.5rem;
+      text-align: center;
+      font-weight: 400;
+    }
+
+    /* Nota de direitos autorais */
+    .copyright {
+      font-size: 1.0rem;
+      text-align: center;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    /* Variação escura do texto */
+    .dark-mode .copyright {
+      color: #000;
+    }
+
+    /* Tabela da página Sobre-mim */
+    .table-sobre {
+      width: 80%;
+      height: auto;
+      margin: auto;
+      margin-top: 1rem;
+      padding: 1px;
+      font-size: 14pt;
+      background-color: #000;
+      border: 1px solid #000;
+      color: #000;
+    }
+
+    .table-sobre tr {
+      background-color: #fff;
+      padding: 1px;
+    }
+
+    .table-sobre th {
+      text-align: left;
+      padding: 5px;
+      padding-right: 0;
+      font-weight: 500;
+    }
+
+    .table-sobre td {
+      text-align: right;
+      padding: 5px;
+      padding-left: 0;
+      font-weight: 300;
+    }
+
+    /* Modo escuro da tabela Sobre */
+    .dark-mode .table-sobre {
+      background-color: #fff;
+      border-color: #fff;
+      color: #fff;
+    }
+
+    .dark-mode .table-sobre tr {
+      background-color: #000;
+    }
+
+    /* Imagem de placeholder */
+    .espere {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .espere img {
+      width: 80%;
+      height: auto;
+      margin: auto;
+      padding: auto;
+      display: flex;
+    }
+
+    /* Área de slide da página Galeria */
+    .slide-section {
+      display: flex;
+      justify-content: center;
+      padding: 0;
+    }
+
+    .slider-wrapper {
+      position: relative;
+      max-width: 23rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Slide de imagens da Galeria */
+    .slider {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      aspect-ratio: 16/9;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
+      border-radius: 0.5rem;
+    }
+
+    /* Configuração das imagens da Galeria*/
+    .slider img {
+      flex: 1 0 100%;
+      scroll-snap-align: start;
+      object-fit: contain;
+    }
+
+    /* Navegador do Slider de imagens */
+    .slider-nav {
+      display: flex;
+      border-radius: 10px;
+      width: 100%;
+      height: auto;
+      background-color: var(--color-box);
+    }
+
+    .slider-nav a {
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 50%;
+      background-color: #fff;
+      opacity: 0.75;
+      transition: opacity ease 250ms;
+    }
+
+    /* Modo Escuro Navegador do Slider */
+    .dark-mode .slider-nav {
+      background-color: var(--darkcolor-box);
+    }
+
+    /* Navegador do Slider com Hover */
+    slider-nav a:hover {
+      opacity: 100%;
+      color: #fff;
+    }
+    
+    /* Tabela da página sobre */
+    .table-char {
+      width: auto;
+      height: auto;
+      margin: auto;
+      margin-top: 1rem;
+      padding: 1px;
+      display: flex;
+      font-size: 14pt;
+      background-color: #000;
+      border: 0px solid #000;
+      color: #000;
+    }
+
+    .table-char tr {
+      background-color: #fff;
+      width: auto;
+      padding: 5px;
+    }
+
+    .table-char th {
+      width: auto;
+      text-align: left;
+      margin: auto;
+      padding: 5px;
+      padding-right: 0;
+      font-weight: 500;
+    }
+
+    .table-char td {
+      width: auto;
+      text-align: center;
+      margin: auto;
+      padding: 5px;
+      padding-left: 0;
+      font-weight: 300;
+    }
+
+    /* Modo escuro da tabela Projeto */
+    .dark-mode .table-char {
+      background-color: #fff;
+      border-color: #fff;
+      color: #fff;
+    }
+
+    .dark-mode .table-char tr {
+      background-color: #000;
+    }
+
+    /* Configurações de imagem do Projeto */
+    .char-ref {
+      width:410px;
+      height: 300px;
+      margin: auto;
+      padding: auto;
+      margin-top: 1rem;
+      display: flex;
+    }
   }
-  .slider-nav a {
-    width: 0.5rem;
-    height: 0.5rem;
-    border-radius: 50%;
-    background-color: #fff;
-    opacity: 0.75;
-    transition: opacity ease 250ms;
-  }
-  /* Modo Escuro Navegador do Slider */
-  .dark-mode .slider-nav {
-  	background-color: var(--darkcolor-box);
-  }
-  /* Navegador do Slider com Hover */
-  slider-nav a:hover {
-    opacity: 100%;
-    color: #fff;
-  }
-}
